@@ -9,6 +9,7 @@ TBD
 ####Developer Notes
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
+* [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
  
 ####Branches
 * `master` - fully functional features
