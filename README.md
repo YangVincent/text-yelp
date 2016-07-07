@@ -10,6 +10,7 @@ TBD
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
 * [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
+* [Twilio](https://www.twilio.com/docs/quickstart/python/sms/replying-to-sms-messages)
  
 ####Branches
 * `master` - fully functional features
@@ -20,3 +21,4 @@ TBD
 * Enter location and distance
 * Sort by topic/provide topics
 * Interface
+* Add the ability to send a location (city, zip) via. text and receive a set of suggestions
