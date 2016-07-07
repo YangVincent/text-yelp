@@ -11,6 +11,8 @@ TBD
 * [Python Yelp](https://github.com/Yelp/yelp-python)
 * [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
 * [Twilio](https://www.twilio.com/docs/quickstart/python/sms/replying-to-sms-messages)
+* [Travel APIs](http://www.programmableweb.com/category/travel/api)
+* [Geo Names](http://www.geonames.org/)
  
 ####Branches
 * `master` - fully functional features
