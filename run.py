@@ -14,7 +14,8 @@ def hello_monkey():
     #return str(resp)
 
     resp = twilio.twiml.Response()
-    resp.say("Hello Monkey")
+    resp.say("Say Hello Monkey")
+    resp.sms("SMS Hello Monkey")
     return str(resp)
 
 
