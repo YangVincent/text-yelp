@@ -1,5 +1,5 @@
 # Yelp and Chill
-[![Build Status](https://travis-ci.com/YangVincent/yelp-and-chill.png)](https://travis-ci.com/YangVincent/yelp-and-chill)
+[![Build Status](https://travis-ci.com/YangVincent/yelp-and-chill.svg?token=2GFc7zcnW6srTpM661Lf&branch=vincent)](https://travis-ci.com/YangVincent/yelp-and-chill)
 
 ####Overview
 Often times, people default to going out to eat or otherwise spending money on a service when they spend time together. This is a tool to help people find places to go and things to do without spending money. 
