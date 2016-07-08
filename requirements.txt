@@ -25,7 +25,6 @@ service-identity==14.0.0
 simplejson==3.8.2
 six==1.10.0
 Twisted==15.5.0
-vboxapi==1.0
 w3lib==1.13.0
 yahoo-finance==1.2.1
 zope.interface==4.1.3
