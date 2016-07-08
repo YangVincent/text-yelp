@@ -9,7 +9,7 @@ app = Flask(__name__)
 def hello_monkey():
     """ respond to incoming calls with a simple text message. 
     >>> hello_monkey()
-    `<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
+    '<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
     """
 
 

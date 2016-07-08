@@ -1,4 +1,5 @@
 # Yelp and Chill
+[![Build Status](https://travis-ci.org/YangVincent/yelp-and-chill.png)](https://travis-ci.org/YangVincent/yelp-and-chill)
 
 ####Overview
 Often times, people default to going out to eat or otherwise spending money on a service when they spend time together. This is a tool to help people find places to go and things to do without spending money. 
@@ -15,6 +16,8 @@ Also, heroku gives a key value storage for API keys. This file is the ```.env```
 * [Twilio](https://www.twilio.com/docs/quickstart/python/sms/replying-to-sms-messages)
 * [Travel APIs](http://www.programmableweb.com/category/travel/api)
 * [Geo Names](http://www.geonames.org/)
+* [Deploying Travis then Heroku](http://phansch.net/2014/02/17/travis-heroku-rails/)
+* [Travis encrypted environment variables](https://docs.travis-ci.com/user/encrypting-files/)
  
 ####Branches
 * `master` - fully functional features
