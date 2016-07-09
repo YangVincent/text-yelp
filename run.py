@@ -3,7 +3,7 @@
 from flask import Flask, request, redirect
 import twilio.twiml
 
-from yelp.Client import Client
+from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
 
 auth = Oauth1Authenticator(
