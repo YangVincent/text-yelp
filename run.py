@@ -38,7 +38,8 @@ def hello_monkey():
         
     bod = request.form.get('Body')
 
-    if 'yac' in bod:
+
+    if bod != None and 'yac' in bod:
         message = "getting yelp results!\n"
 
         params = {
