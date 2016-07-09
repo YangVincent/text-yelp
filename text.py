@@ -2,8 +2,8 @@
 from twilio.rest import TwilioRestClient
 import os
 
-account_sid = os.environ.get("TWILIO_ACCT")
-auth_token = os.environ.get("TWILIO_TOKEN")
+account_sid = os.environ["TWILIO_ACCT"]
+auth_token = os.environ["TWILIO_TOKEN"]
 print(account_sid)
 print(auth_token)
 client = TwilioRestClient(account_sid, auth_token)
