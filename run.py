@@ -46,8 +46,9 @@ def hello_monkey():
         }
         resp = client.search('San Francisco', **params)
         total = []
-        for each in resp.businesses:
-            total.append(each.name)
+        if resp != None:
+            for each in resp.businesses:
+                total.append(each.name)
         
         new_line = '\n'
         message = message + new_line.join(total)
