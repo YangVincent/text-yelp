@@ -3,6 +3,17 @@
 from flask import Flask, request, redirect
 import twilio.twiml
 
+from yelp.Client import Client
+from yelp.oauth1_authenticator import Oauth1Authenticator
+
+auth = Oauth1Authenticator(
+        consumer_key=os.environ["consumer_key"],
+        consumer_secret=os.environ["consumer_secret"],
+        token=os.environ["token"],
+        token_secret=os.environ["token_secret"]
+)
+client = Client(auth)
+
 app = Flask(__name__)
 
 callers = {
@@ -26,7 +37,20 @@ def hello_monkey():
         
     bod = request.form.get('Body')
     if 'yac' in bod:
-        message = "getting yelp results!"
+        message = "getting yelp results!\n"
+
+        params = {
+                'term': 'food',
+                'lang': 'en'
+        }
+        resp = client.search('San Francisco', **params)
+        total = []
+        for each in resp.businesses:
+            total.append(each.name)
+        
+        new_line = '\n'
+        message = message + new_line.join(total)
+
 
 
 
