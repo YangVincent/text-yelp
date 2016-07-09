@@ -24,7 +24,7 @@ def hello_monkey():
     else:
         message = "stranger, thanks for the message!"
         
-    bod = request.values.get('Body')
+    bod = request.form.get('Body')
     if 'yac' in bod:
         message = "getting yelp results!"
 
