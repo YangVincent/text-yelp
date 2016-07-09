@@ -51,8 +51,8 @@ def hello_monkey():
             for each in resp.businesses:
                 total.append(each.name)
         
-       new_line = '\n'
-       message = new_line.join(total)
+        new_line = '\n'
+        message = new_line.join(total)
 
 
 
