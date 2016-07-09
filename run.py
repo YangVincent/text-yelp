@@ -8,10 +8,10 @@ from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
 
 auth = Oauth1Authenticator(
-        consumer_key=os.environ["consumer_key"],
-        consumer_secret=os.environ["consumer_secret"],
-        token=os.environ["token"],
-        token_secret=os.environ["token_secret"]
+    consumer_key=os.environ["consumer_key"],
+    consumer_secret=os.environ["consumer_secret"],
+    token=os.environ["token"],
+    token_secret=os.environ["token_secret"]
 )
 client = Client(auth)
 
@@ -53,8 +53,6 @@ def hello_monkey():
         
         new_line = '\n'
         message = new_line.join(total)
-
-
 
 
     resp = twilio.twiml.Response()
