@@ -45,14 +45,14 @@ def hello_monkey():
                 'term': 'food',
                 'lang': 'en'
         }
-        #resp = client.search('San Francisco', **params)
-        #total = []
-        #if resp != None:
-        #    for each in resp.businesses:
-        #        total.append(each.name)
-        #
-        #new_line = '\n'
-        #message = message + new_line.join(total)
+        resp = client.search('San Francisco', **params)
+        total = []
+        if resp != None:
+            for each in resp.businesses:
+                total.append(each.name)
+        
+       new_line = '\n'
+       message = new_line.join(total)
 
 
 
