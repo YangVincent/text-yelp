@@ -3,3 +3,8 @@ python:
 - '3.4'
 install: pip install -r requirements.txt
 script: nosetests --with-doctest
+deploy:
+  api_key:
+    secure: MJed/jajPSpDHM/uxZHeJshc5SrP3JO/w1NcR3WwRiD485ZGbeHDvspE4MyPjHLtv8PCTvVSNxYiCYpGLnz7HaglPLbmDmevP1vtFJpec0UEjRthiMeUMWIsAp8I0yKrJQXxNyRyh5T53m2bi1aL6/6V8+UtgZb5HzRXvp/ycozlqfMdHDWFUOnzcnC1GfaQ22mPGgSis/FsQG3s+2tukl/dJpns24nks+Y/tGdm4M9crOYQQjLa36bbjCBwOYkeiijXdiDgOfQ0p6akzA+J4ufh/xU9WdM1feKTWrpEJcTDhrnStUqhtKYa/+1Li/RHX8o60BjxwKSj8feUHNxVIy8M52qQKXtncqrcwXNgQb6vbJ7fZoJNVWqfWfWpYd1TOK92EmpxTE5SKYBS5BVZxnhdyMDJPTKNksz4hdkmtqDxJlYHA/EDqGsYA9riImV0ZpTdRwAWR0268eFC2AsUIlU9oDxAhT4BH+7kdUEGsdgmuhUmOwjvxzf8huXProXz2oVP1wAtKoklTTU6GN+lHPSBw6mQ+EVx6A3UJIVbbS0B1Jr+EBdbNWCFC3KcllkJl1B+kg8Zw+wueSIUlEqQ5YadS75PK/GHSBkUBMs0mC5Eb4Qd3+qHcVh8pi9idtu9W5/N5UUGSJLaAyVh75/OFRk94if+AE6puSCfcy07agw=
+  run:
+    web: "gunicorn run:app --log-file -"
