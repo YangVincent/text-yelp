@@ -24,12 +24,13 @@ def hello_monkey():
     else:
         message = "stranger, thanks for the message!"
         
+    bod = request.values.get('Body')
+    if 'yac' in bod:
+        message = "getting yelp results!"
 
 
 
     resp = twilio.twiml.Response()
-    #resp.sms("SMS Hello Monkey")
-    #resp.sms(message)
     resp.message(message)
     return str(resp)
 

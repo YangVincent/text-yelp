@@ -10,6 +10,9 @@ Whenever a push is made from this branch, unit tests will be run with Travis CI.
 ~Also, heroku gives a key value storage for API keys. This file is the ```.env``` file, and isn't added to git due to the gitignore_global.~
 [Heroku Server](https://yelp-and-chill.herokuapp.com)
 
+During development, only verified numbers can receive messages. These can be checked and modified [here](https://www.twilio.com/user/account/phone-numbers/verified). 
+Further information can be found [here](https://www.twilio.com/user/account/log/notifications).
+
 ####Developer Notes
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
