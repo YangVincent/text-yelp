@@ -17,21 +17,21 @@ def hello_monkey():
     #"""
     #'<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
 
-    with app.test_request_context():
-        from_number = request.values.get('From', None)
-        if from_number in callers:
-            message = callers[from_number] + ", thanks for the message!"
-        else:
-            message = "stranger, thanks for the message!" + str(from_number)
-            
+    #from_number = request.values.get('From', None)
+    from_number = request.values.get('From')
+    if from_number in callers:
+        message = callers[from_number] + ", thanks for the message!"
+    else:
+        message = "stranger, thanks for the message!" + str(from_number)
+        
 
 
 
-        resp = twilio.twiml.Response()
-        #resp.sms("SMS Hello Monkey")
-        #resp.sms(message)
-        resp.message(message)
-        return str(resp)
+    resp = twilio.twiml.Response()
+    #resp.sms("SMS Hello Monkey")
+    #resp.sms(message)
+    resp.message(message)
+    return str(resp)
 
 
 if __name__ == "__main__":
