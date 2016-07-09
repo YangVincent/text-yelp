@@ -7,19 +7,19 @@ import twilio.twiml
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
 
-#auth = Oauth1Authenticator(
-#        consumer_key=os.environ["consumer_key"],
-#        consumer_secret=os.environ["consumer_secret"],
-#        token=os.environ["token"],
-#        token_secret=os.environ["token_secret"]
-#)
-#client = Client(auth)
-#
-#app = Flask(__name__)
-#
-#callers = {
-#  "+14082032094": "Vincent Yang"
-#}
+auth = Oauth1Authenticator(
+        consumer_key=os.environ["consumer_key"],
+        consumer_secret=os.environ["consumer_secret"],
+        token=os.environ["token"],
+        token_secret=os.environ["token_secret"]
+)
+client = Client(auth)
+
+app = Flask(__name__)
+
+callers = {
+  "+14082032094": "Vincent Yang"
+}
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_monkey():
