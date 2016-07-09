@@ -46,7 +46,11 @@ def hello_monkey():
                 'term': 'food',
                 'lang': 'en'
         }
-        resp = client.search('San Francisco', **params)
+        if bod[bod.index('yac')+4:] != "":
+            resp = client.search(bod[bod.index('yac')+4:], **params)
+            #s[s.index('yac')+4:]
+        else:
+            resp = client.search('San Francisco', **params)
         total = []
         if resp != None:
             for each in resp.businesses:
