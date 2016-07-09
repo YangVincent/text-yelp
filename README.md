@@ -19,6 +19,7 @@ Whenever a push is made from this branch, unit tests will be run with Travis CI.
 * [Geo Names](http://www.geonames.org/)
 * [Deploying Travis then Heroku](http://phansch.net/2014/02/17/travis-heroku-rails/)
 * [Travis encrypted environment variables](https://docs.travis-ci.com/user/encrypting-files/)
+* [Specific Unit Testing 2](https://www.twilio.com/blog/2014/03/unit-testing-your-twilio-app-using-pythons-flask-and-nose.html)
 
 ####Branches
 * `master` - fully functional features

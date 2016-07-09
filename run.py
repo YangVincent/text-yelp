@@ -12,23 +12,25 @@ callers = {
 @app.route("/", methods=['GET', 'POST'])
 def hello_monkey():
     """ respond to incoming calls with a simple text message. 
-    >>> hello_monkey()
-    '<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
+    >>> hello_monkey() != None
+    True
     """
+    #'<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
 
-    from_number = request.values.get('From', None)
-    if from_number in callers:
-        message = callers[from_number] + ", thanks for the message!"
-    else:
-        message = "stranger, thanks for the message!"
+    with app.app_context():
+        from_number = request.values.get('From', None)
+        if from_number in callers:
+            message = callers[from_number] + ", thanks for the message!"
+        else:
+            message = "stranger, thanks for the message!"
 
 
 
-    resp = twilio.twiml.Response()
-    #resp.sms("SMS Hello Monkey")
-    #resp.sms(message)
-    resp.message(message)
-    return str(resp)
+        resp = twilio.twiml.Response()
+        #resp.sms("SMS Hello Monkey")
+        #resp.sms(message)
+        resp.message(message)
+        return str(resp)
 
 
 if __name__ == "__main__":
