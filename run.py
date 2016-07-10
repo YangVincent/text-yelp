@@ -49,7 +49,7 @@ def hello_monkey():
             yacusage = [usage[0], usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
             message = new_line.join(yacusage)
         elif bod == 'randomusage':
-            randomusage = [usage[0], [usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
+            randomusage = [usage[0], usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
             message = new_line.join(randomusage)
         else:
             message = new_line.join(usage)
