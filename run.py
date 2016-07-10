@@ -72,7 +72,7 @@ def hello_monkey():
             if len(inp) > 2 and inp[3][0] == 'r':
                 #random
                 #next number after r is how many options
-                if inp[3][0][1:].isdigit():
+                if inp[3][1:].isdigit():
                     num_options = int(inp[3][1:])
                     if num_options > len(total):
                         num_options = len(total)
