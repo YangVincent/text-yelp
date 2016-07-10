@@ -39,7 +39,10 @@ def hello_monkey():
     bod = request.form.get('Body')
 
 
-    if bod != None and 'yac' in bod:
+    if bod == 'help':
+        message = "Usage: First line is yac\nSecond line is Current location (e.g. San Diego)\nThird line is search\nFourth line is r + number random options (e.g. r4)"
+    
+    elif bod != None and 'yac' in bod:
         message = "No search term"
 
         #params = {
@@ -59,12 +62,27 @@ def hello_monkey():
             inp = bod.splitlines()
             if len(inp) > 1:
                 params['term'] = inp[2]
+                
             resp = client.search(inp[1], **params)
             total = []
             if resp != None:
                 for each in resp.businesses:
                     total.append(each.name)
         
+            if len(imp) > 2 and imp[3][0] == 'r':
+                #random
+                #next number after r is how many options
+                if imp[3][0][1:].isdigit():
+                    num_options = int(imp[3][0][1:])
+                    if num_options > len(total):
+                        num_options = len(total)
+                    num_remove = len(total) - num_options
+
+                    while num_remove > 0:
+                        total.remove(total[random.randrange(0, len(total)-1)])
+                        num_remove = num_remove - 1
+
+                
             new_line = '\n'
             message = new_line.join(total)
 
