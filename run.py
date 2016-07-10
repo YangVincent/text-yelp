@@ -40,24 +40,33 @@ def hello_monkey():
 
 
     if bod != None and 'yac' in bod:
-        message = "getting yelp results!\n"
+        message = "No search term"
+
+        #params = {
+        #        'term': 'food',
+        #        'lang': 'en'
+        #}
+        #if bod[bod.index('yac')+4:] != "":
+        #    resp = client.search(bod[bod.index('yac')+4:], **params)
+        #    #s[s.index('yac')+4:]
+        #else:
+        #    resp = client.search('San Francisco', **params)
 
         params = {
-                'term': 'food',
                 'lang': 'en'
         }
         if bod[bod.index('yac')+4:] != "":
-            resp = client.search(bod[bod.index('yac')+4:], **params)
-            #s[s.index('yac')+4:]
-        else:
-            resp = client.search('San Francisco', **params)
-        total = []
-        if resp != None:
-            for each in resp.businesses:
-                total.append(each.name)
+            inp = bod.splitlines()
+            if len(inp) > 1:
+                params['term'] = inp[2]
+            resp = client.search(inp[1], **params)
+            total = []
+            if resp != None:
+                for each in resp.businesses:
+                    total.append(each.name)
         
-        new_line = '\n'
-        message = new_line.join(total)
+            new_line = '\n'
+            message = new_line.join(total)
 
 
     resp = twilio.twiml.Response()
