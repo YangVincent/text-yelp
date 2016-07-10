@@ -69,7 +69,7 @@ def hello_monkey():
                 for each in resp.businesses:
                     total.append(each.name)
         
-            if len(inp) > 2 and inp[3][0] == 'r':
+            if len(inp) > 2 and inp[3][0][:1] == 'r':
                 #random
                 #next number after r is how many options
                 if inp[3][0][1:].isdigit():
