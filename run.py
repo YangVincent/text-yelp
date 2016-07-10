@@ -40,7 +40,7 @@ def hello_monkey():
     bod = request.form.get('Body')
 
 
-    if bod == 'help':
+    if bod == 'usage':
         message = "Usage: First line is yac\nSecond line is Current location (e.g. San Diego)\nThird line is search\nFourth line is r + number random options (e.g. r4)"
     
     elif bod != None and 'yac' in bod:
@@ -83,13 +83,12 @@ def hello_monkey():
                         total.remove(total[random.randrange(0, len(total)-1)])
                         num_remove = num_remove - 1
 
-                
             new_line = '\n'
             message = new_line.join(total)
 
 
     resp = twilio.twiml.Response()
-    resp.message(message)
+    resp.message('\n' + message)
     return str(resp)
 
 
