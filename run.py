@@ -40,13 +40,20 @@ def hello_monkey():
     bod = request.form.get('Body')
 
 
-    if bod == 'usage':
-        message = "Usage: First line is yac\nSecond line is Current location (e.g. San Diego)\nThird line is search\nFourth line is r + number random options (e.g. r4)\nHere is an example of each request:\n\
-        f"
-        message = """Usage: First line is the tool you'd like to use - yac or random. Second line is the current location. Third line is your search string. Fourth line is the
-        number of random options you'd like to be shown, if you chose random. Here are examples:
-        yac\nSan Diego\nEscape Room\n\nrandom\nSan Diego\nEscape Room\n4
-        """
+    if 'usage' in bod:
+        usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
+                '4th line is the number of random options you\'d like to be shown', 'Here are examples:', 'yac\nSan Diego\nEscape Room', 'will return all results for \'Escape Room\' in San Diego', 
+                'random\nSan Diego\nEscape Room\n4', 'will return 4 random results for \'Escape Room\' in San Diego']
+        new_line = '\n'
+        if bod == 'yacusage':
+            yacusage = [usage[0], usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
+            message = new_line.join(yacusage)
+        elif bod == 'randomusage':
+            randomusage = [usage[0], [usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
+            message = new_line.join(randomusage)
+        else:
+            message = new_line.join(usage)
+
     
     elif bod != None and 'yac' in bod:
         message = "No search term"
@@ -104,7 +111,7 @@ def hello_monkey():
 
 
     resp = twilio.twiml.Response()
-    resp.message('\n' + message)
+    resp.message(message)
     return str(resp)
 
 
