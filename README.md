@@ -17,6 +17,9 @@ Further information can be found [here](https://www.twilio.com/user/account/log/
 Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. If the message
 contains `yac` (yelp and chill), it will give a list of food options around SF. The next step is to give custom locations, or get the location of the sender.
 
+Issues: Yelp doesn't have logic operators, so it is rather difficult to decide what to actually search for. Possible alternate: put in possible search terms and a number of options
+and it'll choose for you?
+
 ####Developer Notes
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
@@ -39,3 +42,4 @@ contains `yac` (yelp and chill), it will give a list of food options around SF. 
 * Interface
 * Add the ability to send a location (city, zip) via. text and receive a set of suggestions
 * Add the ability to search for a type of food (say, Japanese) but filter out items (e.g. not sushi)
+
