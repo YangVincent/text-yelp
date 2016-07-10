@@ -41,20 +41,15 @@ def hello_monkey():
 
 
     if bod == 'usage':
-        message = "Usage: First line is yac\nSecond line is Current location (e.g. San Diego)\nThird line is search\nFourth line is r + number random options (e.g. r4)"
+        message = "Usage: First line is yac\nSecond line is Current location (e.g. San Diego)\nThird line is search\nFourth line is r + number random options (e.g. r4)\nHere is an example of each request:\n\
+        f"
+        message = """Usage: First line is the tool you'd like to use - yac or random. Second line is the current location. Third line is your search string. Fourth line is the
+        number of random options you'd like to be shown, if you chose random. Here are examples:
+        yac\nSan Diego\nEscape Room\n\nrandom\nSan Diego\nEscape Room\n4
+        """
     
     elif bod != None and 'yac' in bod:
         message = "No search term"
-
-        #params = {
-        #        'term': 'food',
-        #        'lang': 'en'
-        #}
-        #if bod[bod.index('yac')+4:] != "":
-        #    resp = client.search(bod[bod.index('yac')+4:], **params)
-        #    #s[s.index('yac')+4:]
-        #else:
-        #    resp = client.search('San Francisco', **params)
 
         params = {
                 'lang': 'en'
@@ -69,12 +64,33 @@ def hello_monkey():
             if resp != None:
                 for each in resp.businesses:
                     total.append(each.name)
+
+            new_line = '\n'
+            message = new_line.join(total)
+
+    
+    elif bod != None and 'random' in bod:
+        message = "No search term"
+
+        params = {
+                'lang': 'en'
+        }
+        if bod[bod.index('random')+7:] != "":
+            inp = bod.splitlines()
+            if len(inp) > 1:
+                params['term'] = inp[2]
+                
+            resp = client.search(inp[1], **params)
+            total = []
+            if resp != None:
+                for each in resp.businesses:
+                    total.append(each.name)
         
-            if len(inp) > 2 and inp[3][0] == 'r':
+            if len(inp) > 2:
                 #random
-                #next number after r is how many options
-                if inp[3][1:].isdigit():
-                    num_options = int(inp[3][1:])
+                #next number after is how many options
+                if inp[3].isdigit():
+                    num_options = int(inp[3])
                     if num_options > len(total):
                         num_options = len(total)
                     num_remove = len(total) - num_options
