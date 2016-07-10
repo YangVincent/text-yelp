@@ -42,14 +42,14 @@ def hello_monkey():
 
     if 'usage' in bod:
         usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
-                '4th line is the number of random options you\'d like to be shown', 'Here are examples:', 'yac\nSan Diego\nEscape Room', 'will return all results for \'Escape Room\' in San Diego', 
-                'random\nSan Diego\nEscape Room\n4', 'will return 4 random results for \'Escape Room\' in San Diego']
+                '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
+                '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
         new_line = '\n'
         if bod == 'yacusage':
-            yacusage = [usage[0], usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
+            yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
             message = new_line.join(yacusage)
         elif bod == 'randomusage':
-            randomusage = [usage[0], usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
+            randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
             message = new_line.join(randomusage)
         else:
             message = new_line.join(usage)
