@@ -40,75 +40,80 @@ def hello_monkey():
     bod = request.form.get('Body')
 
 
-    if bod != None and 'usage' in bod:
-        usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
-                '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
-                '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
-        new_line = '\n'
-        if 'yacusage' in bod:
-            yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
-            message = new_line.join(yacusage)
-        elif 'randomusage' in bod:
-            randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
-            message = new_line.join(randomusage)
-        else:
-            message = new_line.join(usage)
-
-    
-    elif bod != None and 'yac' in bod:
-        message = "No search term"
-
-        params = {
-                'lang': 'en'
-        }
-        if bod[bod.index('yac')+4:] != "":
-            inp = bod.splitlines()
-            if len(inp) > 2:
-                params['term'] = inp[2]
-                
-            resp = client.search(inp[1], **params)
-            total = []
-            if resp != None:
-                for each in resp.businesses:
-                    total.append(each.name)
-
+    try:
+        if bod != None and 'usage' in bod:
+            usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
+                    '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
+                    '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
             new_line = '\n'
-            message = new_line.join(total)
+            if 'yacusage' in bod:
+                yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
+                message = new_line.join(yacusage)
+            elif 'randomusage' in bod:
+                randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
+                message = new_line.join(randomusage)
+            else:
+                message = new_line.join(usage)
 
-    
-    elif bod != None and 'random' in bod:
-        message = "No search term"
-
-        params = {
-                'lang': 'en'
-        }
-        if bod[bod.index('random')+7:] != "":
-            inp = bod.splitlines()
-            if len(inp) > 2:
-                params['term'] = inp[2]
-                
-            resp = client.search(inp[1], **params)
-            total = []
-            if resp != None:
-                for each in resp.businesses:
-                    total.append(each.name)
         
-            if len(inp) > 2:
-                #random
-                #next number after is how many options
-                if inp[3].isdigit():
-                    num_options = int(inp[3])
-                    if num_options > len(total):
-                        num_options = len(total)
-                    num_remove = len(total) - num_options
+        elif bod != None and 'yac' in bod:
+            message = "No search term"
+
+            params = {
+                    'lang': 'en'
+            }
+            if bod[bod.index('yac')+4:] != "":
+                inp = bod.splitlines()
+                if len(inp) > 2:
+                    params['term'] = inp[2]
+                    
+                resp = client.search(inp[1], **params)
+                total = []
+                if resp != None:
+                    for each in resp.businesses:
+                        total.append(each.name)
+
+                new_line = '\n'
+                message = new_line.join(total)
+
+        
+        elif bod != None and 'random' in bod:
+            message = "No search term"
+
+            params = {
+                    'lang': 'en'
+            }
+            if bod[bod.index('random')+7:] != "":
+                inp = bod.splitlines()
+                if len(inp) > 2:
+                    params['term'] = inp[2]
+                    
+                resp = client.search(inp[1], **params)
+                total = []
+                if resp != None:
+                    for each in resp.businesses:
+                        total.append(each.name)
+            
+                if len(inp) > 3:
+                    #random
+                    #next number after is how many options
+                    if inp[3].isdigit():
+                        num_options = int(inp[3])
+                        if num_options > len(total):
+                            num_options = len(total)
+                        num_remove = len(total) - num_options
+                    else:
+                        num_remove = len(total) - 1
 
                     while num_remove > 0:
                         total.remove(total[random.randrange(0, len(total)-1)])
                         num_remove = num_remove - 1
 
-            new_line = '\n'
-            message = new_line.join(total)
+                new_line = '\n'
+                message = new_line.join(total)
 
+    except:
+        message = "Sorry, there was an error."
 
     resp = twilio.twiml.Response()
     resp.message(message)
