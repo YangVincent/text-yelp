@@ -1,5 +1,5 @@
 import unittest
-from app import app
+from yelp_and_chill import app
 
 class TestYelpAndChill(unittest.TestCase):
     def test_yelp_and_chill(self):

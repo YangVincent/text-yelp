@@ -15,9 +15,6 @@ As such, there are two main features to this program:
 2. Randomly choose an option to combat group indecision when choosing a place to go
 
 ####Usage Instructions
-During development, only verified numbers can receive messages. These can be checked and modified [here](https://www.twilio.com/user/account/phone-numbers/verified). 
-Further information can be found [here](https://www.twilio.com/user/account/log/notifications).
-
 Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. 
 Text `usage` to `+16503977854` to see how to use the application. 
 
