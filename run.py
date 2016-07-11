@@ -40,7 +40,7 @@ def hello_monkey():
     bod = request.form.get('Body')
 
 
-    if 'usage' in bod:
+    if bod != None and 'usage' in bod:
         usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
                 '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
                 '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
