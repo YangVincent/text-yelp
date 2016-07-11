@@ -4,16 +4,25 @@
 
 ####Overview
 Today, 32% of people still don't have smart phones. As such, it is extremely difficult for them to find out about exciting new locations when traveling, or away from the
-computer. This allows users to access Yelp through text. Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
+computer. This allows users to access Yelp through text. 
+
+Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
 of options to choose from, to help eliminate decision fatigue.
+
+As such, there are two main features to this program:
+
+1. Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to
+2. Randomly choose an option to combat group indecision when choosing a place to go
 
 ####Usage Instructions
 During development, only verified numbers can receive messages. These can be checked and modified [here](https://www.twilio.com/user/account/phone-numbers/verified). 
 Further information can be found [here](https://www.twilio.com/user/account/log/notifications).
 
 Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. 
-Text `usage` to `+16503977854` to see how to use the application. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us)
-to use the registered number `+15302978104`. The username and password are both `yelpandchill`. To input newlines as specified in the example from desktop, press `shift+enter`.
+Text `usage` to `+16503977854` to see how to use the application. 
+
+1. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us) to use the registered number `+15302978104`. 
+2. The username and password are both `yelpandchill`. To input newlines as specified in the example from desktop, press `shift+enter`.
 For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. 
 
 `usage` typically texts back
@@ -49,7 +58,7 @@ Escape Room
 3
 ```
 
-An example of a response for general `yac` usage with the request:
+Next, an example of a response for general `yac` usage with the request:
 
 ```
 yac
