@@ -14,6 +14,73 @@ Further information can be found [here](https://www.twilio.com/user/account/log/
 Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. 
 Text `usage` to `+16503977854` to see how to use the application. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us)
 to use the registered number `+15302978104`. The username and password are both `yelpandchill`. To input newlines as specified in the example from desktop, press `shift+enter`.
+For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. 
+
+`usage` typically texts back
+
+```
+Sent from your Twilio trial account - Usage:
+1st line is the tool you'd like to use - yac or random
+2nd line is the current location (e.g. San Diego)
+3rd line is your search string
+4th line is the number of random options you'd like to be shown
+Here are examples:
+
+yac
+San Diego
+Escape Room
+
+will return all results for 'Escape Room' in San Diego
+
+random
+San Diego
+Escape Room
+4
+
+will return 4 random results for 'Escape Room' in San Diego
+```
+
+To use the TextFree application, I suggest using the `random` option to limit the length of reply. An example would be:
+
+```
+random
+San Diego
+Escape Room
+3
+```
+
+An example of a response for general `yac` usage with the request:
+
+```
+yac
+san diego
+escape room
+```
+
+would be:
+
+```
+Sent from your Twilio trial account - Great Room Escape San Diego
+Escape Room Police
+Ryptic Room Escape
+Escapism Puzzle Room
+Escape Game SD
+The Puzzalarium
+Enigma HQ
+House of Hints
+Divergent Realities
+Steal and Escape
+The Entrapment
+Quicksand Escape Games
+3rd Day Escape
+Feet First Eventertainment
+Escapology
+Nate's Point Dog Park - Balboa Park
+Balboa Park
+Point Loma Sports Club
+San Diego Zoo
+Kensington Club
+```
 
 ####Branches
 * `master` - fully functional features
