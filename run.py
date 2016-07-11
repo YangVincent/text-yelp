@@ -35,7 +35,7 @@ def hello_monkey():
     if from_number in callers:
         message = callers[from_number] + ", thanks for the message!"
     else:
-        message = "stranger, thanks for the message!"
+        message = "stranger, there was a formatting error in your message, sorry."
         
     bod = request.form.get('Body')
 
