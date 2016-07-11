@@ -45,10 +45,10 @@ def hello_monkey():
                 '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
                 '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
         new_line = '\n'
-        if bod == 'yacusage':
+        if 'yacusage' in bod:
             yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
             message = new_line.join(yacusage)
-        elif bod == 'randomusage':
+        elif 'randomusage' in bod:
             randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
             message = new_line.join(randomusage)
         else:
