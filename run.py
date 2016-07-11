@@ -63,7 +63,7 @@ def hello_monkey():
         }
         if bod[bod.index('yac')+4:] != "":
             inp = bod.splitlines()
-            if len(inp) > 1:
+            if len(inp) > 2:
                 params['term'] = inp[2]
                 
             resp = client.search(inp[1], **params)
@@ -84,7 +84,7 @@ def hello_monkey():
         }
         if bod[bod.index('random')+7:] != "":
             inp = bod.splitlines()
-            if len(inp) > 1:
+            if len(inp) > 2:
                 params['term'] = inp[2]
                 
             resp = client.search(inp[1], **params)
