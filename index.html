@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Yelp-and-chill by YangVincent</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Yelp-and-chill</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/YangVincent/yelp-and-chill">View the Project on GitHub <small>YangVincent/yelp-and-chill</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/YangVincent/yelp-and-chill/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/YangVincent/yelp-and-chill/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/YangVincent/yelp-and-chill">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="yelp-and-chill" class="anchor" href="#yelp-and-chill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yelp and Chill</h1>
+
+<hr>
+
+<h4>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h4>
+
+<p>Today, 32% of people still don't have smart phones. As such, it is extremely difficult for them to find out about exciting new locations when traveling, or away from the
+computer. This allows users to access Yelp through text. </p>
+
+<p>Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
+of options to choose from, to help eliminate decision fatigue.</p>
+
+<p>As such, there are two main features to this program:</p>
+
+<ol>
+<li>Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to</li>
+<li>Randomly choose an option to combat group indecision when choosing a place to go</li>
+</ol>
+
+<h4>
+<a id="usage-instructions" class="anchor" href="#usage-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Instructions</h4>
+
+<p>Currently, verified numbers can message <code>+16503977854</code> via. SMS. If the message is from a registered number, the response will greet by name. 
+Text <code>usage</code> to <code>+16503977854</code> to see how to use the application. </p>
+
+<ol>
+<li>Unfortunately, the Twilio account used is on the free version, but you can sign into <a href="textfree.us">TextFree</a> to use the registered number <code>+15302978104</code>. </li>
+<li>The username and password are both <code>yelpandchill</code>. To input newlines as specified in the example from desktop, press <code>shift+enter</code>.
+For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. </li>
+</ol>
+
+<p><code>usage</code> typically texts back</p>
+
+<pre><code>Sent from your Twilio trial account - Usage:
+1st line is the tool you'd like to use - yac or random
+2nd line is the current location (e.g. San Diego)
+3rd line is your search string
+4th line is the number of random options you'd like to be shown
+Here are examples:
+
+yac
+San Diego
+Escape Room
+
+will return all results for 'Escape Room' in San Diego
+
+random
+San Diego
+Escape Room
+4
+
+will return 4 random results for 'Escape Room' in San Diego
+</code></pre>
+
+<p>To use the TextFree application, I suggest using the <code>random</code> option to limit the length of reply. An example would be:</p>
+
+<pre><code>random
+San Diego
+Escape Room
+3
+</code></pre>
+
+<p>Next, an example of a response for general <code>yac</code> usage with the request:</p>
+
+<pre><code>yac
+san diego
+escape room
+</code></pre>
+
+<p>would be:</p>
+
+<pre><code>Sent from your Twilio trial account - Great Room Escape San Diego
+Escape Room Police
+Ryptic Room Escape
+Escapism Puzzle Room
+Escape Game SD
+The Puzzalarium
+Enigma HQ
+House of Hints
+Divergent Realities
+Steal and Escape
+The Entrapment
+Quicksand Escape Games
+3rd Day Escape
+Feet First Eventertainment
+Escapology
+Nate's Point Dog Park - Balboa Park
+Balboa Park
+Point Loma Sports Club
+San Diego Zoo
+Kensington Club
+</code></pre>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Created by Vincent Yang (<a href="https://github.com/YangVincent" class="user-mention">@YangVincent</a>) and Annie Tu (<a href="https://github.com/annietuu" class="user-mention">@annietuu</a>).</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>If you have an issue or further suggestions, please use our <a href="https://github.com/YangVincent/yelp-and-chill/issues">issue tracker</a>. Thanks!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/YangVincent">YangVincent</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
