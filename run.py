@@ -111,6 +111,8 @@ def hello_monkey():
 
                 new_line = '\n'
                 message = new_line.join(total)
+        else:
+            message = "Incomplete request; more information needed."
 
     except:
         message = "Sorry, there was an error."
