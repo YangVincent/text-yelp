@@ -11,5 +11,5 @@ deploy:
   on:
     repo: YangVincent/yelp-and-chill
     branch: vincent
-  run: "web: gunicorn app:app --log-file -"
+  run: "web: gunicorn yelp-and-chill:app --log-file -"
 
