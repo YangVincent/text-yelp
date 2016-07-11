@@ -25,17 +25,6 @@ Possible alternates:
 3. List popular free options and let them choose - ex: parks, beaches, events, hot air balloons, NOT food items
 4. Added extra feature: list restrooms
 
-####Developer Notes
-* [Requests](http://docs.python-requests.org/en/master/)
-* [Python Yelp](https://github.com/Yelp/yelp-python)
-* [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
-* [Twilio](https://www.twilio.com/docs/quickstart/python/sms/replying-to-sms-messages)
-* [Travel APIs](http://www.programmableweb.com/category/travel/api)
-* [Geo Names](http://www.geonames.org/)
-* [Deploying Travis then Heroku](http://phansch.net/2014/02/17/travis-heroku-rails/)
-* [Travis encrypted environment variables](https://docs.travis-ci.com/user/encrypting-files/)
-* [Specific Unit Testing 2](https://www.twilio.com/blog/2014/03/unit-testing-your-twilio-app-using-pythons-flask-and-nose.html)
-
 ####Branches
 * `master` - fully functional features
 * `vincent` - vincent's development
@@ -46,5 +35,3 @@ Possible alternates:
 * Sort by topic/provide topics
 * Interface
 * Add the ability to send a location (city, zip) via. text and receive a set of suggestions
-* Add the ability to search for a type of food (say, Japanese) but filter out items (e.g. not sushi)
-
