@@ -23,14 +23,10 @@ callers = {
 }
 
 @app.route("/", methods=['GET', 'POST'])
-def hello_monkey():
-    #""" respond to incoming calls with a simple text message. 
-    #>>> hello_monkey() is None
-    #False
-    #"""
-    #'<?xml version="1.0" encoding="UTF-8"?><Response><Sms>SMS Hello Monkey</Sms></Response>'
-
-    #from_number = request.values.get('From', None)
+def process_request():
+    """
+    Call the Yelp API based off of Twilio responses
+    """
     from_number = request.values.get('From')
     if from_number in callers:
         message = callers[from_number] + ", thanks for the message!"
