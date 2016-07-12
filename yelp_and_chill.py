@@ -123,8 +123,8 @@ def process_request():
                     message = '\n' + bus.name + '\n' + bus.display_phone + '\n' + bus.location
         else:
             message = "Incomplete request; more information needed."
-    except:
-        message = "Sorry, there was an error."
+    except Exception as e:
+        message = "Sorry, there was an error " + e
 
     message = "Powered by Yelp\n" + message
     resp = twilio.twiml.Response()
