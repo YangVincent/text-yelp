@@ -9,10 +9,11 @@ computer. This allows users to access Yelp through text.
 Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
 of options to choose from, to help eliminate decision fatigue.
 
-As such, there are two main features to this program:
+As such, there are three main features to this program:
 
 1. Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to
 2. Randomly choose an option to combat group indecision when choosing a place to go
+3. Find details about results (phone number, address, ratings) 
 
 ####Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. 
@@ -66,7 +67,8 @@ escape room
 would be:
 
 ```
-Sent from your Twilio trial account - Great Room Escape San Diego
+Sent from your Twilio trial account - Powered by Yelp
+Great Room Escape San Diego
 Escape Room Police
 Ryptic Room Escape
 Escapism Puzzle Room
@@ -86,6 +88,25 @@ Balboa Park
 Point Loma Sports Club
 San Diego Zoo
 Kensington Club
+```
+
+Finally, the user can ask for details: for the example 
+```
+Detail
+San Diego
+Balboa Park
+```
+
+The reply is
+```
+Sent from your Twilio trial account - Powered by Yelp
+
+Balboa Park
+Phone: +1-619-239-0512
+Address: 1549 El Prado
+Balboa Park
+San Diego, CA 92101
+5.0/5 over 1443 reviews
 ```
 
 ####Developer Notes
