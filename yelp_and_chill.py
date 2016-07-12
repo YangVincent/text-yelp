@@ -120,7 +120,7 @@ def process_request():
                 resp = client.search(inp[1], **params)
                 if resp != None:
                     bus = resp.businesses[0]
-                    message = '\n' + bus.name + '\n' + bus.display_phone + '\n' + bus.location.display_address
+                    message = '\n' + bus.name + '\nPhone: ' + bus.display_phone + '\nAddress: ' + '\n'.join(bus.location.display_address)
         else:
             message = "Incomplete request; more information needed."
     except Exception as e:
