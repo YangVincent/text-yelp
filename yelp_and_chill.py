@@ -37,9 +37,10 @@ def process_request():
 
     try:
         if bod != None and 'usage' in bod:
-            usage = ['Usage:', '1st line is the tool you\'d like to use - yac or random', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
+            usage = ['Usage:', '1st line is the tool you\'d like to use - yac, random, or detail', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
                     '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
-                    '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego']
+                    '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego', 'Next, if you use the command detail, ', '3rd line is the name of the business',
+                    'will return the phone number, address, and rating for the specified business.']
             new_line = '\n'
             if 'yacusage' in bod:
                 yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
@@ -47,6 +48,9 @@ def process_request():
             elif 'randomusage' in bod:
                 randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
                 message = new_line.join(randomusage)
+            elif 'detailusage' in bod:
+                detailusage = ['detailusage:', usage[1], usage[2], usage[11], usage[12]]
+                message = new_line.join(detailusage)
             else:
                 message = new_line.join(usage)
 
@@ -121,6 +125,7 @@ def process_request():
                 if resp != None:
                     bus = resp.businesses[0]
                     message = '\n' + bus.name + '\nPhone: ' + bus.display_phone + '\nAddress: ' + '\n'.join(bus.location.display_address) + '\n' + str(bus.rating) + '/5 over ' + str(bus.review_count) + ' reviews'
+
         else:
             message = "Incomplete request; more information needed."
     except Exception as e:
