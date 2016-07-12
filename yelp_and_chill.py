@@ -120,11 +120,11 @@ def process_request():
                 resp = client.search(inp[1], **params)
                 if resp != None:
                     bus = resp.businesses[0]
-                    message = '\n' + bus.name + '\n' + bus.display_phone + '\n' + bus.location
+                    message = '\n' + bus.name + '\n' + bus.display_phone + '\n' + bus.location.display_address
         else:
             message = "Incomplete request; more information needed."
     except Exception as e:
-        message = "Sorry, there was an error " + e
+        message = "Sorry, there was an error " + str(e)
 
     message = "Powered by Yelp\n" + message
     resp = twilio.twiml.Response()
