@@ -31,8 +31,6 @@
         <h1>
 <a id="yelp-and-chill" class="anchor" href="#yelp-and-chill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yelp and Chill</h1>
 
-<hr>
-
 <h4>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h4>
 
@@ -42,11 +40,12 @@ computer. This allows users to access Yelp through text. </p>
 <p>Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
 of options to choose from, to help eliminate decision fatigue.</p>
 
-<p>As such, there are two main features to this program:</p>
+<p>As such, there are three main features to this program:</p>
 
 <ol>
 <li>Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to</li>
 <li>Randomly choose an option to combat group indecision when choosing a place to go</li>
+<li>Find details about results (phone number, address, ratings) </li>
 </ol>
 
 <h4>
@@ -101,7 +100,8 @@ escape room
 
 <p>would be:</p>
 
-<pre><code>Sent from your Twilio trial account - Great Room Escape San Diego
+<pre><code>Sent from your Twilio trial account - Powered by Yelp
+Great Room Escape San Diego
 Escape Room Police
 Ryptic Room Escape
 Escapism Puzzle Room
@@ -121,6 +121,25 @@ Balboa Park
 Point Loma Sports Club
 San Diego Zoo
 Kensington Club
+</code></pre>
+
+<p>Finally, the user can ask for details: for the example </p>
+
+<pre><code>Detail
+San Diego
+Balboa Park
+</code></pre>
+
+<p>The reply is</p>
+
+<pre><code>Sent from your Twilio trial account - Powered by Yelp
+
+Balboa Park
+Phone: +1-619-239-0512
+Address: 1549 El Prado
+Balboa Park
+San Diego, CA 92101
+5.0/5 over 1443 reviews
 </code></pre>
 
 <h3>
