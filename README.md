@@ -88,6 +88,17 @@ San Diego Zoo
 Kensington Club
 ```
 
+####Developer Notes
+* [Requests](http://docs.python-requests.org/en/master/)
+* [Python Yelp](https://github.com/Yelp/yelp-python)
+* [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
+* [Twilio](https://www.twilio.com/docs/quickstart/python/sms/replying-to-sms-messages)
+* [Travel APIs](http://www.programmableweb.com/category/travel/api)
+* [Geo Names](http://www.geonames.org/)
+* [Deploying Travis then Heroku](http://phansch.net/2014/02/17/travis-heroku-rails/ )
+* [Travis encrypted environment variables](https://docs.travis-ci.com/user/encrypting-files/)
+* [Specific Unit Testing 2](https://www.twilio.com/blog/2014/03/unit-testing-your-twilio-app-using-pythons-flask-and-nose.html)
+
 ####Branches
 * `master` - fully functional features
 * `vincent` - vincent's development

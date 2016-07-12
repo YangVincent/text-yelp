@@ -106,11 +106,26 @@ def process_request():
 
                 new_line = '\n'
                 message = new_line.join(total)
+        elif bod != None and 'detail' in bod:
+            message = 'No search term' 
+            params = {
+                    'lang': 'en'
+
+            }
+            if bod[bod.index('detail')+7:] != "":
+                inp = bod.splitlines()
+                if len(inp) > 2:
+                    params['term'] = inp[2]
+                resp = client.search(inp[1], **params)
+                if resp != None:
+                    bus = resp.businesses[0]
+                    message = '\n' + bus.name + '\n' + bus.display_phone + '\n' + bus.location
         else:
             message = "Incomplete request; more information needed."
     except:
         message = "Sorry, there was an error."
 
+    message = "Powered by Yelp\n" + message
     resp = twilio.twiml.Response()
     resp.message(message)
     return str(resp)
