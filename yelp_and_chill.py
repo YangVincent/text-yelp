@@ -106,6 +106,7 @@ def process_request():
 
                 new_line = '\n'
                 message = new_line.join(total)
+
         elif bod != None and 'detail' in bod:
             message = 'No search term' 
             params = {
