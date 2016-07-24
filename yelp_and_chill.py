@@ -26,10 +26,14 @@ client = Client(auth)
 app = Flask(__name__)
 
 callers = {
-  "+14082032094": "Vincent Yang"
+  "+14082032094": "AeonNeo"
 }
 
 def print_usage(bod):
+    '''
+    Prints different usage instructions depending on the specific command specified.
+    '''
+    
     usage = ['Usage:', '1st line is the tool you\'d like to use - yac, random, or detail', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
        '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
        '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego', 'Next, if you use the command detail, ', '3rd line is the name of the business',
@@ -49,6 +53,10 @@ def print_usage(bod):
     return message
 
 def process_yelp_and_chill(bod):
+    '''
+    Processes a search query sent to Yelp and formats the response to send back to the user.
+    '''
+
     message = "No search term"
 
     params = {

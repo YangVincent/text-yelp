@@ -1,6 +1,7 @@
 # Yelp and Chill
 [![Build Status](https://travis-ci.org/YangVincent/yelp-and-chill.svg?branch=vincent)](https://travis-ci.org/YangVincent/yelp-and-chill)
-![Heroku](https://heroku-badge.herokuapp.com/?app=yelp-and-chill)
+![Heroku](https://heroku-badge.herokuapp.com/?app=yelp-and-chill&style=flat)
+
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 ####Overview
@@ -10,12 +11,12 @@ computer. This allows users to access Yelp through text.
 Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
 of options to choose from, to help eliminate decision fatigue.
 
-As such, there are three main features to this program:
+As such, there are four main features to this program:
 
 1. Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to
 2. Randomly choose an option to combat group indecision when choosing a place to go
 3. Find details about results (phone number, address, ratings) 
-4. Give directions to an address
+4. Give directions to an address through different modes of transportation
 
 ####Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. 
@@ -114,7 +115,9 @@ San Diego, CA 92101
 
 Finally, the user can get directions. For example if I am leaving from 
 *Sunnyvale Public Library, 665 West Olive Avenue, Sunnyvale, CA 94086*
+
 to 
+
 *Serra park, Tennis Courts, 730 The Dalles Avenue, Sunnyvale, CA 94085* and I want to drive,
 I can send:
 
