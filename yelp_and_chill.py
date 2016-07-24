@@ -177,7 +177,6 @@ def google_directions(ori, dest, mo):
         instr = re.sub(style_regex, '; ', each['html_instructions'])
         instr = re.sub(regex, '', instr)
         message.append(instr)
-        #print(each['html_instructions'])
 
     return '\n'.join(message)
 
