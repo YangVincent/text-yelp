@@ -1,6 +1,7 @@
 # Yelp and Chill
 [![Build Status](https://travis-ci.org/YangVincent/yelp-and-chill.svg?branch=vincent)](https://travis-ci.org/YangVincent/yelp-and-chill)
 ![Heroku](https://heroku-badge.herokuapp.com/?app=yelp-and-chill)
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 ####Overview
 Today, 32% of people still don't have smart phones. As such, it is extremely difficult for them to find out about exciting new locations when traveling, or away from the
@@ -14,14 +15,16 @@ As such, there are three main features to this program:
 1. Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to
 2. Randomly choose an option to combat group indecision when choosing a place to go
 3. Find details about results (phone number, address, ratings) 
+4. Give directions to an address
 
 ####Usage Instructions
-Currently, verified numbers can message `+16503977854` via. SMS. If the message is from a registered number, the response will greet by name. 
+Currently, verified numbers can message `+16503977854` via. SMS. 
 Text `usage` to `+16503977854` to see how to use the application. 
 
 1. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us) to use the registered number `+15302978104`. 
 2. The username and password are both `yelpandchill`. To input newlines as specified in the example from desktop, press `shift+enter`.
 For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. 
+3. If you would like to register your number to be verified, feel free to email me. 
 
 `usage` typically texts back
 
@@ -90,9 +93,9 @@ San Diego Zoo
 Kensington Club
 ```
 
-Finally, the user can ask for details: for the example 
+The user can also ask for details: for the example 
 ```
-Detail
+detail
 San Diego
 Balboa Park
 ```
@@ -109,6 +112,33 @@ San Diego, CA 92101
 5.0/5 over 1443 reviews
 ```
 
+Finally, the user can get directions. For example if I am leaving from 
+*Sunnyvale Public Library, 665 West Olive Avenue, Sunnyvale, CA 94086*
+to 
+*Serra park, Tennis Courts, 730 The Dalles Avenue, Sunnyvale, CA 94085* and I want to drive,
+I can send:
+
+```
+direction
+Sunnyvale Public Library, Sunnyvale, CA
+Serra Park, Sunnyvale, CA
+driving
+```
+
+and the response will be
+```
+Start from: Sunnyvale, CA, USA
+End at: Serra park, Tennis Courts, 730 The Dalles Ave, Sunnyvale, CA 94085, USA
+Duration: 10 mins
+Distance: 3.1 mi
+Head east on El Camino Real
+Turn right onto E Remington Dr
+Turn left onto Hollenbeck Ave
+Turn right at Grand Coulee Ave; Destination will be on the right
+```
+
+Alternate modes of transportation are ```walking```, ```bicycling```, and ```transit```. Driving is the default mode of transportation.
+
 ####Developer Notes
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
@@ -119,6 +149,8 @@ San Diego, CA 92101
 * [Deploying Travis then Heroku](http://phansch.net/2014/02/17/travis-heroku-rails/ )
 * [Travis encrypted environment variables](https://docs.travis-ci.com/user/encrypting-files/)
 * [Specific Unit Testing 2](https://www.twilio.com/blog/2014/03/unit-testing-your-twilio-app-using-pythons-flask-and-nose.html)
+* [Google Directions API](https://developers.google.com/maps/documentation/directions/)
+* [Google Directions Python API](https://github.com/googlemaps/google-maps-services-python)
 
 ####Branches
 * `master` - fully functional features
