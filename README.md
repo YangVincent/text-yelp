@@ -4,6 +4,9 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
+[<img src="yelp.png" alt="Powered by Yelp" width="144">](https://www.yelp.com/)
+[<img src="google.png" alt="Powered by Google" width="144">](https://www.google.com)
+
 ####Overview
 Today, 32% of people still don't have smart phones. As such, it is extremely difficult for them to find out about exciting new locations when traveling, or away from the
 computer. This allows users to access Yelp through text. 
@@ -17,11 +20,6 @@ As such, there are four main features to this program:
 2. Randomly choose an option to combat group indecision when choosing a place to go
 3. Find details about results (phone number, address, ratings) 
 4. Give directions to an address through different modes of transportation
-
-[![Powered by Yelp](yelp.png =144x18)](https://www.yelp.com/)
-[![Powered by Google](google.png =144x18)](https://www.google.com)
-[<img src="yelp.png" alt="Powered by Yelp" width="144">](https://www.yelp.com/)
-<img src="google.png" alt="Powered by Google" width="144">
 
 ####Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. 
