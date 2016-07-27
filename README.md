@@ -18,8 +18,8 @@ As such, there are four main features to this program:
 3. Find details about results (phone number, address, ratings) 
 4. Give directions to an address through different modes of transportation
 
-[![Powered by Yelp](yelp.png)](https://www.yelp.com/)
-[![Powered by Google](google.png)](https://www.google.com)
+[![Powered by Yelp](yelp.png =144x18)](https://www.yelp.com/)
+[![Powered by Google](google.png =144x18)](https://www.google.com)
 
 ####Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. 
