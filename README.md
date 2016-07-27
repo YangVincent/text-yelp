@@ -20,6 +20,8 @@ As such, there are four main features to this program:
 
 [![Powered by Yelp](yelp.png =144x18)](https://www.yelp.com/)
 [![Powered by Google](google.png =144x18)](https://www.google.com)
+[<img src="yelp.png" alt="Powered by Yelp" width="144">](https://www.yelp.com/)
+<img src="google.png" alt="Powered by Google" width="144">
 
 ####Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. 
