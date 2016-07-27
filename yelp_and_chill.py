@@ -48,8 +48,12 @@ def print_usage(bod):
     elif 'detailusage' in bod:
         detailusage = ['detailusage:', usage[1], usage[2], usage[11], usage[12]]
         message = new_line.join(detailusage)
+    elif 'directionusage' in bod:
+        directionusage = 'directionusage:\n1st line is command: direction\n2nd line is the origin (where you want to travel from)\n3rd line is the destination\n4th line is the mode of transportation\nOptions for transportation are bicycling, walking, driving, and transit'
+        message = directionusage
     else:
         message = new_line.join(usage)
+
     return message
 
 def process_yelp_and_chill(bod):
@@ -67,14 +71,17 @@ def process_yelp_and_chill(bod):
         if len(inp) > 2:
             params['term'] = inp[2]
             
-        resp = client.search(inp[1], **params)
+        # Search using their query with the given area
+        resp = client.search(inp[1], **params) 
         total = []
+
         if resp != None:
             for each in resp.businesses:
                 total.append(each.name)
 
         new_line = '\n'
         message = new_line.join(total)
+
     return message
 
 def process_random(bod):
@@ -83,6 +90,7 @@ def process_random(bod):
     params = {
             'lang': 'en'
     }
+
     if bod[bod.index('random')+7:] != "":
         inp = bod.splitlines()
         if len(inp) > 2:
@@ -184,7 +192,7 @@ def google_directions(ori, dest, mo):
 @app.route("/", methods=['GET', 'POST'])
 def process_request():
     """
-    Call the Yelp API based off of Twilio responses
+    Call the Yelp API or Google Directions API based off of Twilio responses
     """
     from_number = request.values.get('From')
     if from_number in callers:
@@ -212,6 +220,7 @@ def process_request():
 
         elif bod != None and 'direction' in bod:
             message = process_direction(bod)
+            message = "Powered by Google\n" + message
 
         else:
             message = "Incomplete request; more information needed."
