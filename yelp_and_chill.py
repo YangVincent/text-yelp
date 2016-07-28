@@ -34,25 +34,43 @@ def print_usage(bod):
     Prints different usage instructions depending on the specific command specified.
     '''
     
-    usage = ['Usage:', '1st line is the tool you\'d like to use - yac, random, or detail', '2nd line is the current location (e.g. San Diego)', '3rd line is your search string',
-       '4th line is the number of random options you\'d like to be shown', 'Here are examples:', '\nyac\nSan Diego\nEscape Room\n', 'will return all results for \'Escape Room\' in San Diego', 
-       '\nrandom\nSan Diego\nEscape Room\n4\n', 'will return 4 random results for \'Escape Room\' in San Diego', 'Next, if you use the command detail, ', '3rd line is the name of the business',
-       'will return the phone number, address, and rating for the specified business.']
-    new_line = '\n'
     if 'yacusage' in bod:
-        yacusage = ['yacusage:', usage[1], usage[2], usage[3], usage[5], usage[6], usage[7]]
-        message = new_line.join(yacusage)
+        message = ( 
+            'yacusage: 1st line is the tool you\'d like to use - yac, random, direction, or detail'
+            '\n2nd line is the current location (e.g. San Diego)' 
+            '\n3rd line is your search string'
+            '\nHere are examples: '
+            '\n\nyac\nSan Diego\nEscape Room\n\nwill return all results for \'Escape Room\' in San Diego'
+        )
+        
     elif 'randomusage' in bod:
-        randomusage = ['randomusage:', usage[1], usage[2], usage[3], usage[4], usage[5], usage[8], usage[9]]
-        message = new_line.join(randomusage)
+        message = (
+            'randomusage: 1st line is the tool you\'d like to use - yac, random, direction, or detail'
+            '\n2nd line is the current location (e.g. San Diego)' 
+            '\n3rd line is your search string'
+            '\n4th line is the number of random options you\'d like to be shown'
+            '\nHere are examples:\n\nrandom\nSan Diego\nEscape Room\n4\n\n'
+            'will return 4 random results for \'Escape Room\' in San Diego'
+        )
     elif 'detailusage' in bod:
-        detailusage = ['detailusage:', usage[1], usage[2], usage[11], usage[12]]
-        message = new_line.join(detailusage)
+        message = (
+            'detailusage: 1st line is the tool you\'d like to use - yac, random, direction, or detail\n'        
+            '2nd line is the current location (e.g. San Diego)\n'
+            '3rd line is the name of the business.\n This returns the phone number, address, and rating for the specified business.'
+        )
     elif 'directionusage' in bod:
-        directionusage = 'directionusage:\n1st line is command: direction\n2nd line is the origin (where you want to travel from)\n3rd line is the destination\n4th line is the mode of transportation\nOptions for transportation are bicycling, walking, driving, and transit'
-        message = directionusage
+        message = 'directionusage:\n1st line is command: direction\n2nd line is the origin (where you want to travel from)\n3rd line is the destination\n4th line is the mode of transportation\nOptions for transportation are bicycling, walking, driving, and transit'
     else:
-        message = new_line.join(usage)
+        message = (
+            'yacusage: 1st line is the tool you\'d like to use - yac, random, direction, or detail'
+            '\n2nd line is the current location (e.g. San Diego)' 
+            '\n3rd line is your search string'
+            '\nHere are examples: '
+            '\n\nyac\nSan Diego\nEscape Room\n\nwill return all results for \'Escape Room\' in San Diego\n\n'
+            'random\nSan Diego\nEscape Room\n4\n\n will return 4 random results for \'Escape Room\' in San Diego.'
+            '\nNext, if you use the command \'detail\', the 3rd line is the name of the business and it returns the phone number, address, and rating.'
+            '\nFinaly, with the command \'direction\' you can get directions to the business. \n\nUse \'yacusage\', \'randomusage\', \'detailusage\', and \'directionusage\' to see more info.'
+        )
 
     return message
 
@@ -234,6 +252,6 @@ def process_request():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
     #port = int(os.environ.get("PORT", 5000))
     #app.run(host='0.0.0.0', port=port)
