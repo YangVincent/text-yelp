@@ -31,6 +31,9 @@
         <h1>
 <a id="yelp-and-chill" class="anchor" href="#yelp-and-chill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yelp and Chill</h1>
 
+<p><a href="https://www.yelp.com/"><img src="yelp.png" alt="Powered by Yelp" width="144"></a>
+<a href="https://www.google.com"><img src="google.png" alt="Powered by Google" width="144"></a></p>
+
 <h4>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h4>
 
@@ -40,24 +43,26 @@ computer. This allows users to access Yelp through text. </p>
 <p>Additionally, many people have trouble deciding where to go. This helps users randomly decide a user-specified number
 of options to choose from, to help eliminate decision fatigue.</p>
 
-<p>As such, there are three main features to this program:</p>
+<p>As such, there are four main features to this program:</p>
 
 <ol>
 <li>Allow non-smartphones to still search for Yelp results, whereas they wouldn't normally be able to</li>
 <li>Randomly choose an option to combat group indecision when choosing a place to go</li>
 <li>Find details about results (phone number, address, ratings) </li>
+<li>Give directions to an address through different modes of transportation</li>
 </ol>
 
 <h4>
 <a id="usage-instructions" class="anchor" href="#usage-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Instructions</h4>
 
-<p>Currently, verified numbers can message <code>+16503977854</code> via. SMS. If the message is from a registered number, the response will greet by name. 
+<p>Currently, verified numbers can message <code>+16503977854</code> via. SMS. 
 Text <code>usage</code> to <code>+16503977854</code> to see how to use the application. </p>
 
 <ol>
 <li>Unfortunately, the Twilio account used is on the free version, but you can sign into <a href="textfree.us">TextFree</a> to use the registered number <code>+15302978104</code>. </li>
 <li>The username and password are both <code>yelpandchill</code>. To input newlines as specified in the example from desktop, press <code>shift+enter</code>.
 For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. </li>
+<li>If you would like to register your number to be verified, feel free to email me. </li>
 </ol>
 
 <p><code>usage</code> typically texts back</p>
@@ -123,9 +128,9 @@ San Diego Zoo
 Kensington Club
 </code></pre>
 
-<p>Finally, the user can ask for details: for the example </p>
+<p>The user can also ask for details: for the example </p>
 
-<pre><code>Detail
+<pre><code>detail
 San Diego
 Balboa Park
 </code></pre>
@@ -142,15 +147,43 @@ San Diego, CA 92101
 5.0/5 over 1443 reviews
 </code></pre>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>Finally, the user can get directions. For example if I am leaving from 
+<em>Sunnyvale Public Library, 665 West Olive Avenue, Sunnyvale, CA 94086</em></p>
 
-<p>Created by Vincent Yang (<a href="https://github.com/YangVincent" class="user-mention">@YangVincent</a>) and Annie Tu (<a href="https://github.com/annietuu" class="user-mention">@annietuu</a>).</p>
+<p>to </p>
+
+<p><em>Serra park, Tennis Courts, 730 The Dalles Avenue, Sunnyvale, CA 94085</em> and I want to drive,
+I can send:</p>
+
+<pre><code>direction
+Sunnyvale Public Library, Sunnyvale, CA
+Serra Park, Sunnyvale, CA
+driving
+</code></pre>
+
+<p>and the response will be</p>
+
+<pre><code>Start from: Sunnyvale, CA, USA
+End at: Serra park, Tennis Courts, 730 The Dalles Ave, Sunnyvale, CA 94085, USA
+Duration: 10 mins
+Distance: 3.1 mi
+Head east on El Camino Real
+Turn right onto E Remington Dr
+Turn left onto Hollenbeck Ave
+Turn right at Grand Coulee Ave; Destination will be on the right
+</code></pre>
+
+<p>Alternate modes of transportation are <code>walking</code>, <code>bicycling</code>, and <code>transit</code>. Driving is the default mode of transportation.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>If you have an issue or further suggestions, please use our <a href="https://github.com/YangVincent/yelp-and-chill/issues">issue tracker</a>. Thanks!</p>
+<p>If you have an issue or further suggestions, please use the <a href="https://github.com/YangVincent/yelp-and-chill/issues">issue tracker</a>. Thanks!</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Created by Vincent Yang (<a href="https://github.com/YangVincent" class="user-mention">@YangVincent</a>). If you have any comments or suggestions, please feel free to drop be a line at <a href="mailto:vinyang@ucdavis.edu">vinyang@ucdavis.edu</a>.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/YangVincent">YangVincent</a></p>
