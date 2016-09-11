@@ -25,7 +25,8 @@ As such, there are four main features to this program:
 Currently, verified numbers can message `+16503977854` via. SMS. 
 Text `usage` to `+16503977854` to see how to use the application. 
 
-1. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us) to use the registered number `+15302978104`. 
+Update Sept 11, 2016: Twilio's trial account only works for a limited period of time. If you would still like to try out this project, please message me at vinyang@ucdavis.edu. Thank you!
+~~1. Unfortunately, the Twilio account used is on the free version, but you can sign into [TextFree](textfree.us) to use the registered number `+15302978104`.~~
 2. The username and password are both `yelpandchill`. To input newlines as specified in the example from desktop, press `shift+enter`.
 For the time being until I can find an application that can receive long messages from Twilio, there are certain constraints. 
 3. If you would like to register your number to be verified, feel free to email me. 
