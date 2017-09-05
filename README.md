@@ -7,7 +7,7 @@
 [<img src="yelp.png" alt="Powered by Yelp" width="144">](https://www.yelp.com/)
 [<img src="google.png" alt="Powered by Google" width="144">](https://www.google.com)
 
-####Overview
+#### Overview
 Today, 32% of people still don't have smart phones. As such, it is extremely difficult for them to find out about exciting new locations when traveling, or away from the
 computer. This allows users to access Yelp through text. 
 
@@ -21,7 +21,7 @@ As such, there are four main features to this program:
 3. Find details about results (phone number, address, ratings) 
 4. Give directions to an address through different modes of transportation
 
-####Usage Instructions
+#### Usage Instructions
 Currently, verified numbers can message `+16503977854` via. SMS. 
 Text `usage` to `+16503977854` to see how to use the application. 
 
@@ -146,7 +146,7 @@ Turn right at Grand Coulee Ave; Destination will be on the right
 
 Alternate modes of transportation are ```walking```, ```bicycling```, and ```transit```. Driving is the default mode of transportation.
 
-####Developer Notes
+#### Developer Notes
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Python Yelp](https://github.com/Yelp/yelp-python)
 * [Unit Testing](http://docs.python-guide.org/en/latest/writing/tests/)
@@ -159,12 +159,7 @@ Alternate modes of transportation are ```walking```, ```bicycling```, and ```tra
 * [Google Directions API](https://developers.google.com/maps/documentation/directions/)
 * [Google Directions Python API](https://github.com/googlemaps/google-maps-services-python)
 
-####Branches
-* `master` - fully functional features
-* `vincent` - vincent's development
-* `annie` - annie's development
-
-####Features
+#### Features
 * Enter location and distance
 * Sort by topic/provide topics
 * Interface
