@@ -1,5 +1,5 @@
-# Yelp and Chill
-[![Build Status](https://travis-ci.org/YangVincent/yelp-and-chill.svg?branch=vincent)](https://travis-ci.org/YangVincent/yelp-and-chill)
+# Text Yelp
+[![Build Status](https://travis-ci.org/YangVincent/text-yelp.svg?branch=vincent)](https://travis-ci.org/YangVincent/yelp-and-chill)
 ![Heroku](https://heroku-badge.herokuapp.com/?app=yelp-and-chill&style=flat)
 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
